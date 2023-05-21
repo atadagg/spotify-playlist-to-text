@@ -11,9 +11,9 @@ def scrape_playlist():
         playlist_url = request.form['playlist_url']
         playlist_id = extract_playlist_id(playlist_url)
 
-        # Set up your Spotify API credentials
-        client_id = '6c685d12ac3f4e9f9de1773b0c8bbf50'
-        client_secret = 'faf12cfcc5f644ba84742291044e46e8'
+        # Use your own Spotify API keys
+        client_id = 'client_ID'
+        client_secret = 'client_secret'
 
         # Create a Spotify client
         client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
@@ -24,7 +24,7 @@ def scrape_playlist():
         tracks = results['items']
 
         playlist_text = ''
-        # Iterate through the tracks and extract track name and artist name
+        # Iterate through the tracks and get track name and artist name
         for track in tracks:
             if track['track'] is None:  # Skip tracks that have been removed
                 continue
@@ -44,6 +44,7 @@ def scrape_playlist():
     '''
 
 def extract_playlist_id(playlist_url):
+    # Use regex to slice the playlist id
     playlist_id = re.search(r'playlist/([a-zA-Z0-9]+)', playlist_url)
     if playlist_id:
         return playlist_id.group(1)

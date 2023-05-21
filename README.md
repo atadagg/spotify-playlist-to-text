@@ -1,5 +1,5 @@
 This is a webapp for converting spotify playlists into text.
 
-![Input](path/to/image.jpg)
+![Input](assets/Screenshot 2023-05-21 at 19.54.35.png)
 
-![Result](path/to/image.jpg)
+![Result](assets/Screenshot 2023-05-21 at 19.54.41.png)
